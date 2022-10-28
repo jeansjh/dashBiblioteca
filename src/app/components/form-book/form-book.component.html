@@ -1,0 +1,38 @@
+<form [formGroup]="formBook">
+  <div class="bg-indigo-50 min-h-screen md:px-20 pt-6">
+    <div class=" bg-white rounded-md px-6 py-10 max-w-2xl mx-auto">
+      <h1 class="text-center text-2xl font-bold text-gray-500 mb-10">
+        {{book.id === undefined ? 'Añadir Nuevo Libro' : 'Editar Libro'}}
+      </h1>
+      <div class="space-y-4">
+        <div>
+          <label for="title" class="block mb-2 text-lg">Titulo:</label>
+          <input type="text" formControlName="titulo" placeholder="title" class="w-full outline-none py-1 px-2 text-md border-2 rounded-md" />
+        </div>
+        <div>
+          <label for="title" class="block mb-2 text-lg">Autor:</label>
+          <input type="text" formControlName="autor" placeholder="autor" class="w-full outline-none py-1 px-2 text-md border-2 rounded-md" />
+        </div>
+        <div>
+          <label for="description" class="block mb-2 text-lg">Description 1:</label>
+          <textarea formControlName="desc1" cols="30" rows="5" placeholder="whrite here.." class="w-full  p-4 text-gray-600 outline-none border-2 rounded-md"></textarea>
+        </div>
+        <div>
+          <label for="description" class="block mb-2 text-lg">Description 2:</label>
+          <textarea formControlName="desc2" cols="30" rows="5" placeholder="whrite here.." class="w-full  p-4 text-gray-600 outline-none border-2 rounded-md"></textarea>
+        </div>
+        <div>
+          <label for="title" class="block mb-2 text-lg">Url image:</label>
+          <input type="text" formControlName="url_img" placeholder="url image here" class="w-full outline-none py-1 px-2 text-md border-2 rounded-md" />
+        </div>
+        <div>
+          <label for="title" class="block mb-2 text-lg">Url Libro:</label>
+          <input type="text" formControlName="url_libro" placeholder="url libro here" class="w-full outline-none py-1 px-2 text-md border-2 rounded-md" />
+        </div>
+        <button (click)="saveOrUpdate()" [disabled]="formBook.invalid" class="btn-save px-6 py-2 mx-auto block rounded-md text-lg font-semibold text-indigo-100 bg-indigo-600">
+          {{book.id === undefined ? 'Register' : 'Actualizar'}}
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
